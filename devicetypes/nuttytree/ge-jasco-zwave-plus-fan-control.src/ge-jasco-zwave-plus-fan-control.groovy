@@ -118,10 +118,10 @@ metadata {
 	tiles(scale:2) {
 		multiAttributeTile(name:"switch", type: "lighting", width: 6, height: 4, canChangeIcon: true){
 			tileAttribute ("device.switch", key: "PRIMARY_CONTROL") {
-				attributeState "on", label: '${name}', action: "switch.off", icon: "st.thermostat.fan-on", backgroundColor: "#00a0dc", nextState:"turningOff"
-				attributeState "off", label: '${name}', action: "switch.on", icon: "st.thermostat.fan-auto", backgroundColor: "#ffffff", nextState:"turningOn"
-				attributeState "turningOn", label:"Turning On", action:"switch.off", icon:"st.thermostat.fan-on", backgroundColor:"#00a0dc", nextState:"turningOff"
-				attributeState "turningOff", label:"Turning Off", action:"switch.on", icon:"st.thermostat.fan-auto", backgroundColor:"#ffffff", nextState:"turningOn"
+				attributeState "on", label: '${name}', action: "switch.off", icon: "st.switches.switch.on", backgroundColor: "#00a0dc", nextState:"turningOff"
+				attributeState "off", label: '${name}', action: "switch.on", icon: "st.switches.switch.off", backgroundColor: "#ffffff", nextState:"turningOn"
+				attributeState "turningOn", label:"Turning On", action:"switch.off", icon:"st.switches.switch.on", backgroundColor:"#00a0dc", nextState:"turningOff"
+				attributeState "turningOff", label:"Turning Off", action:"switch.on", icon:"st.switches.switch.off", backgroundColor:"#ffffff", nextState:"turningOn"
 			}
 			tileAttribute ("device.level", key: "VALUE_CONTROL") {
 				attributeState "VALUE_UP", action:"levelUp"
@@ -133,11 +133,11 @@ metadata {
 		}
         
         standardTile("doubleUp", "device.button", width: 3, height: 2, decoration: "flat") {
-			state "default", label: "Tap ▲▲", backgroundColor: "#ffffff", action: "doubleUp", icon: "st.thermostat.fan-on"
+			state "default", label: "Tap ▲▲", backgroundColor: "#ffffff", action: "doubleUp", icon: "st.switches.switch.on"
 		}     
  
         standardTile("doubleDown", "device.button", width: 3, height: 2, decoration: "flat") {
-			state "default", label: "Tap ▼▼", backgroundColor: "#ffffff", action: "doubleDown", icon: "st.thermostat.fan-auto"
+			state "default", label: "Tap ▼▼", backgroundColor: "#ffffff", action: "doubleDown", icon: "st.switches.switch.off"
 		} 
 
 		standardTile("indicator", "device.indicatorStatus", width: 2, height: 2, inactiveLabel: false, decoration: "flat") {
